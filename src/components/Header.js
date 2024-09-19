@@ -14,7 +14,7 @@ export default function Header({onFilterChange, onDateChange}) {
     const [endDate, setEndDate] = useState(new Date());
     const [customDateRange, setCustomDateRange] = useState('__.__.__-__.__.__');
 
-    const today = new Date(); // Получаем сегодняшнюю дату
+    const today = new Date();
 
     const toggleDropdown1 = () => {
         setIsOpenDropdown1(!isOpenDropdown1);
@@ -26,7 +26,6 @@ export default function Header({onFilterChange, onDateChange}) {
         setIsOpenDropdown1(false);
     };
 
-    // Function to calculate date range based on selected option
     const getDateRange = (option) => {
         const today = new Date();
         let startDate = null;
@@ -35,11 +34,11 @@ export default function Header({onFilterChange, onDateChange}) {
         switch (option) {
             case '3 дня':
                 startDate = new Date(today);
-                startDate.setDate(today.getDate() - 2); // Last 3 days including today
+                startDate.setDate(today.getDate() - 2);
                 break;
             case 'Неделя':
                 startDate = new Date(today);
-                startDate.setDate(today.getDate() - 6); // Last 7 days including today
+                startDate.setDate(today.getDate() - 6);
                 break;
             case 'Месяц':
                 startDate = new Date(today);
@@ -132,11 +131,11 @@ export default function Header({onFilterChange, onDateChange}) {
     function filtersClear() {
         if (selectedOption1 !== 'Все типы') {
             setSelectedOption1('Все типы');
-            onFilterChange(null); // Сбрасываем фильтр по типам
+            onFilterChange(null);
         }
         setSelectedOption2('3 дня');
         const {startDate, endDate} = getDateRange('3 дня');
-        onDateChange({startDate, endDate}); // Сбрасываем фильтр по датам
+        onDateChange({startDate, endDate});
     }
 
 

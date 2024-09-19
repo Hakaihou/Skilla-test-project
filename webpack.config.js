@@ -22,14 +22,14 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/, // Обрабатываем все файлы с расширениями .js и .jsx
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {
                         presets: [
-                            '@babel/preset-env', // Преобразует современный JavaScript
-                            '@babel/preset-react' // Преобразует JSX в JavaScript
+                            '@babel/preset-env',
+                            '@babel/preset-react'
                         ],
                     },
                 },

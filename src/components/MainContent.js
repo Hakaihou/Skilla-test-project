@@ -4,7 +4,7 @@ import CallCard from './CallCard';
 export default function MainContent({ filter, dateRange }) {
     const [groupedCalls, setGroupedCalls] = useState({});
     const [sortedCalls, setSortedCalls] = useState({});
-    const [timeSortDirection, setTimeSortDirection] = useState("DESC"); // Сортировка по умолчанию по убыванию
+    const [timeSortDirection, setTimeSortDirection] = useState("DESC");
     const [durationSortDirection, setDurationSortDirection] = useState("ASC");
 
     useEffect(() => {
@@ -12,7 +12,7 @@ export default function MainContent({ filter, dateRange }) {
         const params = new URLSearchParams();
         params.append('limit', '5000');
         params.append('sort_by', 'date');
-        params.append('order', 'DESC'); // По умолчанию сортировка по убыванию по времени
+        params.append('order', 'DESC');
 
         if (dateRange && dateRange.startDate && dateRange.endDate) {
             const dateStart = dateRange.startDate.toISOString().split('T')[0];
@@ -37,7 +37,6 @@ export default function MainContent({ filter, dateRange }) {
                 } else {
                     setGroupedCalls({});
                 }
-                console.log(data.results);
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
@@ -45,7 +44,6 @@ export default function MainContent({ filter, dateRange }) {
             });
     }, [dateRange]);
 
-    // Применение сортировки по времени при изменении направлений сортировки или данных
     useEffect(() => {
         applyTimeSort();
     }, [groupedCalls, timeSortDirection]);
@@ -74,7 +72,7 @@ export default function MainContent({ filter, dateRange }) {
             newSortedCalls[group] = sorted[group].sort((a, b) => {
                 const timeA = new Date(a.date).getTime();
                 const timeB = new Date(b.date).getTime();
-                return timeB - timeA; // По умолчанию сортировка по убыванию времени
+                return timeB - timeA;
             });
         });
 
@@ -83,8 +81,8 @@ export default function MainContent({ filter, dateRange }) {
 
     const filterCalls = (calls) => {
         if (!calls) return [];
-        if (filter === null) return calls; // Показываем все вызовы, если фильтр не выбран
-        return calls.filter(call => call.in_out === filter); // Фильтруем по входящим/исходящим
+        if (filter === null) return calls;
+        return calls.filter(call => call.in_out === filter);
     };
 
     const groupCallsByDate = (calls) => {
@@ -114,10 +112,9 @@ export default function MainContent({ filter, dateRange }) {
         setGroupedCalls(grouped);
     };
 
-    // Сортировка по длительности НЕ сбрасывает сортировку по времени
     const durationSort = (event) => {
         event.preventDefault();
-        const sorted = { ...sortedCalls }; // Используем текущие отсортированные данные
+        const sorted = { ...sortedCalls };
         Object.keys(sorted).forEach(group => {
             sorted[group] = sorted[group].sort((a, b) => {
                 const durationA = a.time || 0;

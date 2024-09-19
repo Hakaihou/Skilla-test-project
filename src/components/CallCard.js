@@ -27,7 +27,6 @@ export default function CallCard(props) {
 
     const handlePlayPause = () => {
         if (!callRecording && props.record) {
-            // Загружаем запись при нажатии на кнопку воспроизведения
             fetch(recordingUrl, {
                 method: 'POST',
                 headers: {
@@ -45,10 +44,8 @@ export default function CallCard(props) {
                     const url = window.URL.createObjectURL(blob);
                     setCallRecording(url);
 
-                    // Устанавливаем аудиофайл в плеер
                     audioRef.current.src = url;
 
-                    // Ждем, когда аудиофайл будет готов к воспроизведению
                     audioRef.current.addEventListener('canplaythrough', () => {
                         audioRef.current.play();
                         setIsPlaying(true);
@@ -87,7 +84,6 @@ export default function CallCard(props) {
 
     const handleDownload = () => {
         if (!callRecording && props.record) {
-            // Если аудиофайл еще не загружен, загружаем его при нажатии на кнопку "Скачать"
             fetch(recordingUrl, {
                 method: 'POST',
                 headers: {
@@ -105,7 +101,6 @@ export default function CallCard(props) {
                     const url = window.URL.createObjectURL(blob);
                     setCallRecording(url);
 
-                    // Создаем и инициируем загрузку файла
                     const link = document.createElement('a');
                     link.href = url;
                     link.download = 'call_recording.mp3';
@@ -115,7 +110,7 @@ export default function CallCard(props) {
                 })
                 .catch((error) => console.error('Ошибка при запросе записи:', error));
         } else {
-            // Если файл уже загружен, просто инициируем его скачивание
+
             const link = document.createElement('a');
             link.href = callRecording;
             link.download = 'call_recording.mp3';

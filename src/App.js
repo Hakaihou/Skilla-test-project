@@ -6,18 +6,17 @@ import Footer from './components/Footer';
 export default function App() {
     const [filter, setFilter] = useState(null);
     const [dateRange, setDateRange] = useState({
-        startDate: new Date(new Date().setDate(new Date().getDate() - 2)), // По умолчанию последние 3 дня
-        endDate: new Date(), // Сегодня
+        startDate: new Date(new Date().setDate(new Date().getDate() - 2)),
+        endDate: new Date(),
     });
 
     const handleFilterChange = (filterType) => {
-        setFilter(filterType); // Установка фильтра напрямую
-        console.log(filterType);
+        setFilter(filterType);
     };
 
 
     const handleDateChange = (range) => {
-        setDateRange(range); // Обновить диапазон дат
+        setDateRange(range);
     };
 
     return (
