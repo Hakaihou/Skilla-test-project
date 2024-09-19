@@ -1,0 +1,336 @@
+html {
+  font-family: "SF Pro Display", sans-serif;
+  font-weight: 400;
+  color: #122945;
+}
+
+body {
+  background: #F1F4F9;
+  padding: 80px 0 120px;
+  margin: 0;
+}
+
+#root {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+header .dropdown-container {
+  display: flex;
+  gap: 38px;
+  align-items: center;
+}
+header .dropdown-container .filters-clear {
+  font-size: 14px;
+  position: relative;
+  color: #5E7793;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+header .dropdown-container .filters-clear p {
+  margin: 0;
+  padding-right: 8px;
+}
+header .dropdown-container .filters-clear svg {
+  position: absolute;
+  right: -12px;
+  top: 2.5px;
+}
+header .dropdown-container .filters-clear svg path {
+  transition: all 0.3s;
+}
+header .dropdown-container .filters-clear:hover {
+  color: #002CFB;
+  transition: all 0.3s;
+}
+header .dropdown-container .filters-clear:hover svg path {
+  fill: #002CFB;
+  transition: all 0.3s;
+}
+header .dropdown {
+  position: relative;
+  display: inline-block;
+}
+header .dropdown .dropdown-toggle {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 14px;
+  color: #5E7793;
+  transition: all 0.3s;
+  padding: 0;
+}
+header .dropdown .dropdown-toggle .arrow {
+  transition: all 0.3s;
+  position: absolute;
+  top: 0px;
+  right: -22px;
+}
+header .dropdown .dropdown-toggle .rotate {
+  transform: rotate(180deg);
+}
+header .dropdown .dropdown-toggle .rotate path {
+  fill: #002CFB;
+  transition: all 0.3s;
+}
+header .dropdown .dropdown-menu {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  background-color: #fff;
+  z-index: 1000;
+  border-radius: 8px;
+  font-size: 12px;
+  list-style-type: none;
+  padding: 4px 0;
+  margin: 0;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.0784313725);
+}
+header .dropdown .dropdown-menu .active {
+  color: #002CFB;
+}
+header .dropdown .dropdown-menu li {
+  padding: 7px 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  line-height: 18px;
+  width: 133px;
+  box-sizing: border-box;
+}
+header .dropdown .dropdown-menu li:hover {
+  background: #DEE4FF;
+  transition: all 0.3s;
+}
+header .dropdown .dropdown-active {
+  color: #002CFB;
+  transition: all 0.3s;
+}
+header .date .react-datepicker {
+  position: absolute;
+  z-index: 1000;
+  right: 0;
+}
+header .date .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+header .date .dropdown-toggle .date-flex {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #002CFB;
+  transition: all 0.3s;
+}
+header .date .dropdown-toggle .date-flex svg path {
+  transition: all 0.3s;
+}
+header .date .dropdown-toggle .date-flex p {
+  margin: 0;
+}
+header .date .dropdown-toggle .date-flex:hover svg path {
+  fill: #002CFB;
+  transition: all 0.3s;
+}
+header .date .dropdown-toggle svg path {
+  transition: all 0.3s;
+}
+header .date .dropdown-toggle svg:hover path {
+  fill: #002CFB;
+  transition: all 0.3s;
+}
+header .date .dropdown-menu {
+  font-size: 14px;
+  top: 28px;
+  right: 0;
+  left: initial;
+}
+header .date .dropdown-menu .custom-date-range {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .date .dropdown-menu .custom-date-range .date-range {
+  letter-spacing: -0.9px;
+  color: inherit;
+}
+header .date .dropdown-menu .custom-date-range p {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 1.7px;
+  color: #ADBFDF;
+}
+header .date .dropdown-menu .date-specify {
+  padding-left: 21px;
+  margin: 12px 0 0;
+}
+header .date .dropdown-menu li {
+  padding: 6px 21px;
+  width: 204px;
+  box-sizing: border-box;
+  line-height: 28px;
+}
+header .date .dropdown-menu li:hover:last-child svg {
+  transition: all 0.3s;
+}
+header .date .dropdown-menu li:hover:last-child svg path {
+  fill: #002CFB;
+  transition: all 0.3s;
+}
+
+main {
+  padding: 0 0 24px 40px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 5px 0px #E9EDF3;
+}
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+main table thead tr th {
+  text-align: left;
+  padding: 24px 0 0 0;
+  font-size: 14px;
+  color: #5E7793;
+  font-weight: 400;
+  box-sizing: border-box;
+  position: relative;
+}
+main table thead tr th:first-child {
+  width: 54px;
+}
+main table thead tr th:nth-child(2) {
+  width: 88px;
+}
+main table thead tr th:nth-child(3) {
+  width: 129px;
+}
+main table thead tr th:nth-child(4) {
+  width: 325px;
+}
+main table thead tr th:nth-child(5) {
+  width: 214px;
+}
+main table thead tr th:nth-child(6) {
+  width: 200px;
+}
+main table thead tr th:nth-child(7) {
+  width: -webkit-fill-available;
+  text-align: right;
+  padding-right: 41px;
+}
+main table thead tr .sort-method {
+  cursor: pointer;
+}
+main table thead tr .sort-method .arrow {
+  position: absolute;
+  top: 22px;
+  right: 25px;
+  transition: all 0.3s;
+}
+main table thead tr .sort-method .rotate {
+  transform: rotate(180deg);
+}
+main table thead tr .sort-method .right {
+  right: 19px;
+}
+main table tbody td {
+  border-top: 1px solid #EAF0FA;
+  box-sizing: border-box;
+  height: 65px;
+}
+main table tbody td img {
+  max-width: 32px;
+}
+main table tbody td:last-child {
+  text-align: right;
+  padding-right: 40px;
+}
+main table tbody .sourse {
+  color: #5E7793;
+}
+main table tbody .error {
+  color: #EA1A4F;
+  font-size: 14px;
+}
+main table tbody .audio-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #E5EEF7;
+  border-radius: 25px;
+  padding: 12px 16px 12px 20px;
+  width: 352px;
+  box-sizing: border-box;
+  position: relative;
+}
+main table tbody .audio-container .audio-flex {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+main table tbody .audio-container .audio-flex .progress-container {
+  position: relative;
+  width: 164px;
+  height: 5px;
+  background-color: #b0c7e4;
+  border-radius: 5px;
+  cursor: pointer;
+}
+main table tbody .audio-container svg {
+  cursor: pointer;
+}
+main table tbody .audio-container .download-button path {
+  transition: all 0.3s;
+}
+main table tbody .audio-container .download-button:hover path {
+  fill: #002CFB;
+  transition: all 0.3s;
+}
+main table tbody .audio-container .reset-button path {
+  transition: all 0.3s;
+}
+main table tbody .audio-container .reset-button:hover path {
+  fill: #002CFB;
+  transition: all 0.3s;
+}
+main table tbody .date-row {
+  position: relative;
+}
+main table tbody .date-row .calls-amount {
+  position: absolute;
+  left: 83px;
+  top: -3px;
+  font-size: 12px;
+  color: #899CB1;
+}
+main table tbody .date-row .calls-yesterday {
+  position: absolute;
+  left: 43px;
+  top: -3px;
+  font-size: 12px;
+  color: #899CB1;
+}
+main table tbody .date-row .calls-today {
+  position: absolute;
+  left: 59px;
+  top: -3px;
+  font-size: 12px;
+  color: #899CB1;
+}
+main table tbody .date-row td {
+  border-top: none;
+  text-align: left;
+  padding: 39px 0 16px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,10 @@
+<<<<<<< HEAD
+/node_modules
+/dist
+.idea
+=======
+node_modules
+.idea
+package-lock.json
+/dist
+>>>>>>> parent of 059bd65 (Merge branch 'gh-pages' of https://github.com/Hakaihou/Skilla-test-project into gh-pages)
