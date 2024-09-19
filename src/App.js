@@ -22,7 +22,7 @@ export default function App() {
     return (
         <React.Fragment>
             <Header onFilterChange={handleFilterChange} onDateChange={handleDateChange} />
-            <MainContent filter={filter} dateRange={dateRange} /> {/* Передача фильтра и диапазона дат */}
+            <MainContent filter={filter} dateRange={dateRange} />
             <Footer />
         </React.Fragment>
     );
